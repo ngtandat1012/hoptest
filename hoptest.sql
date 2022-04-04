@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 14, 2022 lúc 07:46 AM
+-- Thời gian đã tạo: Th4 04, 2022 lúc 11:15 AM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 7.4.27
 
@@ -107,7 +107,7 @@ CREATE TABLE `bankb` (
 --
 
 INSERT INTO `bankb` (`id`, `group`, `status`, `hospital_id`) VALUES
-(1, 'A+', '0 Bags', '416'),
+(1, 'A+', '10 Bags', '416'),
 (2, 'A-', '0 Bags', '416'),
 (3, 'B+', '0 Bags', '416'),
 (4, 'B-', '0 Bags', '416'),
@@ -604,9 +604,9 @@ CREATE TABLE `medicine` (
 INSERT INTO `medicine` (`id`, `name`, `category`, `price`, `box`, `s_price`, `quantity`, `generic`, `company`, `effects`, `e_date`, `add_date`, `hospital_id`) VALUES
 (2882, 'Alphachoay', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2870, 'Alaxan', 'Viên', '1', '1', '1', 5, '0', '0', '', '0', '03/13/22', '457'),
-(2871, 'Hapacol sủi 500mg', 'Viên', '1', '0', '1', 5, '0', '0', '', '0', '03/13/22', '457'),
-(2872, 'Hapacol Blue 500mg', 'Viên', '1', '0', '1', 5, '0', '0', '', '0', '03/13/22', '457'),
-(2873, 'Panadol Extra', 'Viên', '1', '0', '1', 5, '0', '0', '', '0', '03/13/22', '457'),
+(2871, 'Hapacol sủi 500mg', 'Viên', '1', '0', '1', 2, '0', '0', '', '0', '03/13/22', '457'),
+(2872, 'Hapacol Blue 500mg', 'Viên', '1', '0', '1', 3, '0', '0', '', '0', '03/13/22', '457'),
+(2873, 'Panadol Extra', 'Viên', '1', '0', '1', 4, '0', '0', '', '0', '03/13/22', '457'),
 (2881, 'Cataflam', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2880, 'Colacdim', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2883, 'Prednisolon', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
@@ -647,13 +647,13 @@ INSERT INTO `medicine` (`id`, `name`, `category`, `price`, `box`, `s_price`, `qu
 (2918, 'Eyeligt ganat', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2919, 'Kẹo Eugica', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2920, 'Stepsil', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
-(2921, 'Captroril  25mg', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
+(2921, 'Captroril  25mg', 'Vĩ', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2922, 'Nifidipin  20mg', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2923, 'Amlodipin  5mg', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2924, 'Cortonyl', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2925, 'Dầu  phật linh', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2926, 'Dầu  trường sơn', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
-(2927, 'Salonpap', 'Viên', '1', NULL, '1', 4, '0', '0', '', '0', '03/14/22', '457'),
+(2927, 'Salonpap', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2928, 'Băng  cá nhân', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2929, 'Băng keo', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
 (2930, 'Băng  cuộn vải', 'Viên', '1', NULL, '1', 5, '0', '0', '', '0', '03/14/22', '457'),
@@ -841,7 +841,8 @@ INSERT INTO `patient` (`id`, `img_url`, `name`, `email`, `doctor`, `address`, `p
 (33, '', 'Mr Patient', 'patient@hms.com', '', 'Florida', '+0123456789', 'Male', '07-07-2019', '', 'A+', '750', '727265', '07/07/19', '1562482338', '', '416'),
 (37, NULL, 'Nguyễn tấn đạt', 'Nguyễn tấn đạt@56564.com', '', 'ghghgh', '56564', 'Male', '01-09-1984', NULL, 'A+', '761', '149490', '03/13/22', '1647134373', NULL, '416'),
 (38, NULL, 'dsadas', 'dsadas@3543543453.com', '0', 'dgdgfd', '3543543453', '0', '0', NULL, '0', '762', '622251', '03/13/22', '1647135459', NULL, '416'),
-(46, NULL, 'NGUYỄN TẤN ĐẠT CCNTT19B', 'NGUYỄN TẤN ĐẠT CCNTT19B@123456789.com', '0', 'ĐÂY LÀ GHI CHÚ', '123456789', 'Nam', '10-12-2001', NULL, '0', '770', '485520', '03/14/22', '1647240299', NULL, '457');
+(52, NULL, 'Nguyễn Tấn Đạt ccntt19b', '19ctha0055', '0', 'đây là ghi chú', '321456887', 'Nam', '01-04-2001', NULL, '0', '776', '204393', '04/04/22', '1649058392', NULL, '457'),
+(53, NULL, 'trần văn hoai', '119CTHA0047', '0', 'dsdsada', '123456789', 'Nữ', '01-02-2020', NULL, '0', '777', '598784', '04/04/22', '1649063431', NULL, '457');
 
 -- --------------------------------------------------------
 
@@ -1185,7 +1186,8 @@ CREATE TABLE `pharmacy_payment` (
 INSERT INTO `pharmacy_payment` (`id`, `category`, `patient`, `doctor`, `date`, `amount`, `vat`, `x_ray`, `flat_vat`, `discount`, `flat_discount`, `gross_total`, `hospital_amount`, `doctor_amount`, `category_amount`, `category_name`, `amount_received`, `status`, `note`, `hospital_id`) VALUES
 (1969, NULL, 'add_new', NULL, '1647134136', '321', '0', NULL, NULL, '', '', '321', NULL, NULL, NULL, '2866*321*1*123', '0', 'unpaid', '', '416'),
 (1970, NULL, '0', NULL, '1647134569', '321', '0', NULL, NULL, '', '', '321', NULL, NULL, NULL, '2866*321*1*123', '0', 'unpaid', '', '416'),
-(2095, NULL, '46', NULL, '1647240319', '1', '0', NULL, NULL, 'NHỨT CHÂN', 'NHỨT CHÂN', '1', NULL, NULL, NULL, '2927*1*1*1', '0', 'unpaid', NULL, '457');
+(2099, NULL, '52', NULL, '1649058603', '2', '0', NULL, NULL, 'ĐÂY LÀ GHI CHÚ', 'ĐÂY LÀ GHI CHÚ', '2', NULL, NULL, NULL, '2871*1*1*1,2873*1*1*1', '0', 'unpaid', NULL, '457'),
+(2100, NULL, '53', NULL, '1649063451', '4', '0', NULL, NULL, 'dsada', 'dsada', '4', NULL, NULL, NULL, '2871*1*2*1,2872*1*2*1', '0', 'unpaid', NULL, '457');
 
 -- --------------------------------------------------------
 
@@ -1356,7 +1358,7 @@ INSERT INTO `settings` (`id`, `system_vendor`, `title`, `address`, `phone`, `ema
 (35, 'Code Aristos | Hospital management System', 'HOSPITAL NAME', 'HOSPITAL ADDRESS', 'HOSPITAL PHONE', 'HOSPITAL EMAIL', NULL, '$', 'english', 'flat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '454'),
 (36, 'Code Aristos | Hospital management System', 'HOSPITAL NAME 1', 'HOSPITAL ADDRESS 1', 'HOSPITAL PHONE 1', 'HOSPITAL EMAIL 1', NULL, '$', 'french', 'flat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '455'),
 (37, 'Code Aristos | Hospital management System', 'Rajbari Clinic', 'road-13,house-11,Nikunja-2,Dhaka-1229', '01819636104', 'rakib@gmail.com', NULL, '$', 'english', 'flat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '456'),
-(38, 'Code Aristos | Hospital management System', 'Quản lý', 'jbhjhgdfgdf', '64564564', 'quanly123', NULL, '$', 'english', 'flat', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '457');
+(38, 'Quản lý toa thuốc CTEC', 'Quản lý', 'jbhjhgdfgdf', '64564564', 'quanly123', NULL, '$', 'english', 'flat', NULL, NULL, 'uploads/z2410465511434010b9fc776407bb4b711815e021b5b8d.png', NULL, NULL, NULL, '', '', '457');
 
 -- --------------------------------------------------------
 
@@ -1540,7 +1542,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `hospital_ion_id`) VALUES
-(1, '127.0.0.1', 'superadmin', '$2y$08$1Rvlfb8r7JXT9SZtzbGYGuttL1p7G4ULzMtOOb4YkxCHuU383eEGK', '', 'superadmin@hms.com', '', 'eX0.Bq6nP57EuXX4hJkPHO973e7a4c25f1849d3a', 1511432365, 'zCeJpcj78CKqJ4sVxVbxcO', 1268889823, 1647166624, 1, 'Super', 'Admin', 'ADMIN', '0', ''),
+(1, '127.0.0.1', 'superadmin', '$2y$08$1Rvlfb8r7JXT9SZtzbGYGuttL1p7G4ULzMtOOb4YkxCHuU383eEGK', '', 'superadmin@hms.com', '', 'eX0.Bq6nP57EuXX4hJkPHO973e7a4c25f1849d3a', 1511432365, 'zCeJpcj78CKqJ4sVxVbxcO', 1268889823, 1648792291, 1, 'Super', 'Admin', 'ADMIN', '0', ''),
 (2, '127.0.0.1', 'Hospital', '$2y$08$nxWYs4Sc9VN6czyUtnJRwuMaflhMRZSV33GESf5zi8rjXGfaSHVlu', NULL, 'admin@hms.com', NULL, NULL, NULL, NULL, 1268889832, 1647158112, 1, 'admin', NULL, NULL, NULL, ''),
 (750, '110.76.129.146', 'Mr Patient', '$2y$08$vTCe3Z4D1j7bVT49XXzoY.PiVP6yMFZ7hBudIbOfRE0vbEtaw5AOa', NULL, 'patient@hms.com', NULL, NULL, NULL, NULL, 1562482338, 1562485101, 1, NULL, NULL, NULL, NULL, '2'),
 (751, '110.76.129.146', 'Mr Doctor', '$2y$08$ehhf9vK8Of7YuYL34uhlAel7HT/IOG/afe1/cHebJOOs2MuEhFTyu', NULL, 'doctor@hms.com', NULL, NULL, NULL, NULL, 1562482389, 1576214710, 1, NULL, NULL, NULL, NULL, '2'),
@@ -1549,10 +1551,11 @@ INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`
 (754, '110.76.129.146', 'Mr Laboratorist', '$2y$08$DU10ibM6SJlw8dK7WER5qeYmRWM/Jl51OxnhpOHvPiTa4lxLBrgjC', NULL, 'laboratorist@hms.com', NULL, NULL, NULL, NULL, 1562482499, NULL, 1, NULL, NULL, NULL, NULL, '2'),
 (755, '110.76.129.146', 'Mr Accountant', '$2y$08$ysIjt93NUbQITf/jtbdAPOGisj2wrT07GCQUC0eJBbqrhZYijp9hq', NULL, 'accountant@hms.com', NULL, NULL, NULL, NULL, 1562482536, NULL, 1, NULL, NULL, NULL, NULL, '2'),
 (756, '110.76.129.146', 'Mr Receptionist', '$2y$08$QGdhZzdJE3Wz76yBlRlLmew.7GimX8MBel8JQiyR8u3uIUQpqTt.m', NULL, 'receptionist@hms.com', NULL, NULL, NULL, NULL, 1562482561, 1562482625, 1, NULL, NULL, NULL, NULL, '2'),
-(760, '::1', 'Quản lý', '$2y$08$.2YilALiDLXXxvPcCVUwhua.PZbhZDrsYwEtzR7TvJF/kxse.8c9m', NULL, 'quanly123', NULL, NULL, NULL, NULL, 1647133499, 1647236116, 1, NULL, NULL, NULL, NULL, NULL),
+(760, '::1', 'Quản lý', '$2y$08$.2YilALiDLXXxvPcCVUwhua.PZbhZDrsYwEtzR7TvJF/kxse.8c9m', NULL, 'quanly123', NULL, NULL, NULL, NULL, 1647133499, 1649057254, 1, NULL, NULL, NULL, NULL, NULL),
 (761, '::1', 'Nguyễn tấn đạt', '$2y$08$4OBSzRJV/S5ZpM1mtpydvu.mGqEKeCi4efyuLbglnSW3J5ZkbZM4m', NULL, 'Nguyễn tấn đạt@56564.com', NULL, NULL, NULL, NULL, 1647134373, NULL, 1, NULL, NULL, NULL, NULL, '2'),
 (762, '::1', 'dsadas', '0', NULL, 'dsadas@3543543453.com', NULL, NULL, NULL, NULL, 1647135459, NULL, 1, NULL, NULL, NULL, NULL, '2'),
-(770, '::1', 'NGUYỄN TẤN ĐẠT CCNTT19B', '0', NULL, 'NGUYỄN TẤN ĐẠT CCNTT19B@123456789.com', NULL, NULL, NULL, NULL, 1647240299, NULL, 1, NULL, NULL, NULL, NULL, '760');
+(776, '::1', 'Nguyễn Tấn Đạt ccntt19b', '0', NULL, '19ctha0055', NULL, NULL, NULL, NULL, 1649058392, NULL, 1, NULL, NULL, NULL, NULL, '760'),
+(777, '::1', 'trần văn hoai', '0', NULL, '119CTHA0047', NULL, NULL, NULL, NULL, 1649063431, NULL, 1, NULL, NULL, NULL, NULL, '760');
 
 -- --------------------------------------------------------
 
@@ -1583,7 +1586,8 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (762, 760, 11),
 (763, 761, 5),
 (764, 762, 5),
-(772, 770, 5);
+(778, 776, 5),
+(779, 777, 5);
 
 -- --------------------------------------------------------
 
@@ -2151,7 +2155,7 @@ ALTER TABLE `package`
 -- AUTO_INCREMENT cho bảng `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT cho bảng `patient_deposit`
@@ -2205,7 +2209,7 @@ ALTER TABLE `pharmacy_expense_category`
 -- AUTO_INCREMENT cho bảng `pharmacy_payment`
 --
 ALTER TABLE `pharmacy_payment`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2096;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2101;
 
 --
 -- AUTO_INCREMENT cho bảng `pharmacy_payment_category`
@@ -2289,13 +2293,13 @@ ALTER TABLE `time_slot`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=771;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=778;
 
 --
 -- AUTO_INCREMENT cho bảng `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=773;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=780;
 
 --
 -- AUTO_INCREMENT cho bảng `website_settings`

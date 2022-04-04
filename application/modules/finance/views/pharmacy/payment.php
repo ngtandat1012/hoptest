@@ -63,7 +63,8 @@
                                
                                 <!-- <th> <?php echo lang('grand_total'); ?> </th> -->
                                 
-                                <th> <?php echo ('Họ và tên'); ?> </th>
+                                <th> <?php echo ('Họ tên và lớp'); ?> </th>
+                                <th> <?php echo ('MASSV'); ?> </th>
                                 <th> <?php echo ('CCCD/CMDD'); ?> </th>
                                 <th> <?php echo ('Chuẩn đoán /Ghi chú'); ?> </th>
                                 <th> <?php echo ('Kê toa'); ?> </th>
@@ -105,10 +106,17 @@
                                     echo $patient_info->name . ' <br>';
                                  ?>
                                 </td>   
+                                <td><?php $patient_info = $this->db->get_where('patient', array('id' => $payment->patient))->row();
+                                    echo $patient_info->email . ' <br>';
+                                 ?>
+                                </td> 
+                                
                                     <td><?php $patient_info = $this->db->get_where('patient', array('id' => $payment->patient))->row();
                                 
                                     P: echo $patient_info->phone ?>
                                     </td>  
+
+                                    
                                     
                                     <td> <?php if (!empty($payment->discount)) { ?>
                                     <strong></strong> <?php

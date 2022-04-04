@@ -59,18 +59,18 @@
                                         </div>
 
 
-                                        <!-- <div class="form-group">
-                                            <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1"><?php echo ('MSSV'); ?></label>
                                             <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='<?php
                                             if (!empty($patient->email)) {
                                                 echo $patient->email;
                                             }
                                             ?>' placeholder="">
-                                        </div> -->
+                                        </div>
 
                                         <!-- <div class="form-group">        
-                                            <label for="exampleInputEmail1"><?php echo lang('password'); ?></label>
-                                            <input type="password" class="form-control" name="password" id="exampleInputEmail1" placeholder="">
+                                            <label for="exampleInputEmail1"><?php echo ('MSSV'); ?></label>
+                                            <input type="text" class="form-control" name="password" id="exampleInputEmail1" placeholder="">
                                         </div> -->
 
                                     

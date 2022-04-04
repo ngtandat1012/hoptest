@@ -27,6 +27,7 @@
                             <tr>
                                 <th><?php echo ('id'); ?></th>                        
                                 <th><?php echo ('Họ tên và lớp'); ?></th>
+                                <th><?php echo ('MSSV'); ?></th>
                                 <th><?php echo ('CCCD / CMDD'); ?></th>
                                 <th><?php echo ('Ngày sinh'); ?></th>
                                 <th><?php echo ('Giới tính'); ?></th>
@@ -89,12 +90,12 @@
                         <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
                     </div>
 
-                    <!-- <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1"><?php echo ('MSSV'); ?></label>
                         <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
                     </div>
 
-                    <div class="form-group col-md-6">
+                    <!-- <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('password'); ?></label>
                         <input type="password" class="form-control" name="password" id="exampleInputEmail1" placeholder="">
                     </div> -->
@@ -241,10 +242,10 @@
                         <input type="text" class="form-control" name="name" id="exampleInputEmail1" value='' placeholder="">
                     </div>
 
-                    <!-- <div class="form-group col-md-6">
-                        <label for="exampleInputEmail1"><?php echo lang('email'); ?></label>
-                        <input type="text" class="form-control" name="text" id="exampleInputEmail1" value='' placeholder="">
-                    </div> -->
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1"><?php echo ('MSSV'); ?></label>
+                        <input type="text" class="form-control" name="email" id="exampleInputEmail1" value='' placeholder="">
+                    </div>
 
                     <!-- <div class="form-group col-md-6">
                         <label for="exampleInputEmail1"><?php echo lang('change'); ?><?php echo lang('password'); ?></label>

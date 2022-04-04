@@ -101,11 +101,7 @@ class Patient extends MX_Controller {
 
 
         $email = $this->input->post('email');
-        if (empty($email)) {
-            $email = $name . '@' . $phone.'.com';
-        }
-
-
+      
 
         $this->load->library('form_validation');
         $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
@@ -114,22 +110,23 @@ class Patient extends MX_Controller {
         $this->form_validation->set_rules('name', 'Name', 'trim|required|min_length[2]|max_length[100]|xss_clean');
         // Validating Password Field
         if (empty($id)) {
-            $this->form_validation->set_rules('password', 'Password', 'trim||min_length[3]|max_length[100]|xss_clean');
+            $this->form_validation->set_rules('password', 'Password', 'trim|min_length[3]|max_length[100]|xss_clean');
         }
         // Validating Email Field
         $this->form_validation->set_rules('email', 'Email', 'trim|min_length[2]|max_length[100]|xss_clean');
         // Validating Doctor Field
         //   $this->form_validation->set_rules('doctor', 'Doctor', 'trim|min_length[1]|max_length[100]|xss_clean');
         // Validating Address Field   
-        $this->form_validation->set_rules('address', 'Address', 'trim||min_length[2]|max_length[500]|xss_clean');
+        $this->form_validation->set_rules('address', 'Address', 'trim|required|min_length[2]|max_length[500]|xss_clean');
         // Validating Phone Field           
-        $this->form_validation->set_rules('phone', 'Phone', 'trim||min_length[2]|max_length[50]|xss_clean');
+        $this->form_validation->set_rules('phone', 'Phone', 'trim|required|min_length[2]|max_length[50]|xss_clean');
         // Validating Email Field
-        $this->form_validation->set_rules('sex', 'Sex', 'trim|required|min_length[2]|max_length[100]|xss_clean');
+        $this->form_validation->set_rules('sex', 'Sex', 'trim|min_length[2]|max_length[100]|xss_clean');
         // Validating Address Field   
-        $this->form_validation->set_rules('birthdate', 'Birth Date', 'trim|required|min_length[2]|max_length[500]|xss_clean');
+        $this->form_validation->set_rules('birthdate', 'Birth Date', 'trim|min_length[2]|max_length[500]|xss_clean');
         // Validating Phone Field           
         $this->form_validation->set_rules('bloodgroup', 'Blood Group', 'trim|min_length[1]|max_length[10]|xss_clean');
+        
 
 
         if ($this->form_validation->run() == FALSE) {
@@ -1077,7 +1074,7 @@ class Patient extends MX_Controller {
         }
         //  $data['patients'] = $this->patient_model->getPatient();
 
-        foreach ($data['patients'] as $patient) {
+        foreach ($data['patients'] as $patient ) {
 
             if ($this->ion_auth->in_group(array('admin', 'Accountant', 'Receptionist', 'Laboratorist', 'Nurse', 'Doctor'))) {
                 //   $options1 = '<a type="button" class="btn editbutton" title="Edit" data-toggle="modal" data-id="463"><i class="fa fa-edit"> </i> Edit</a>';
@@ -1095,13 +1092,11 @@ class Patient extends MX_Controller {
             }
 
             $options6 = ' <a type="button" class="btn detailsbutton inffo" title="' . lang('info') . '" data-toggle = "modal" data-id="' . $patient->id . '"><i class="fa fa-info"> </i> ' . lang('info') . '</a>';
-
-
-            
             if ($this->ion_auth->in_group(array('admin'))) {
                 $info[] = array(
                     $patient->id,
                     $patient->name,
+                    $patient->email,
                     $patient->phone,
                     $patient->birthdate,
                     $patient->sex,
@@ -1118,10 +1113,15 @@ class Patient extends MX_Controller {
                 $info[] = array(
                     $patient->id,
                     $patient->name,
+                    $patient->email,
                     $patient->phone,
+                    $patient->birthdate,
+                    $patient->sex,
                     $patient->address,
-                   // $this->settings_model->getSettings()->currency . $this->patient_model->getDueBalanceByPatientId($patient->id),
-                    $options1 . ' ' . $options6 . ' ' . $options4,
+                
+                    //$this->settings_model->getSettings()->currency . $this->patient_model->getDueBalanceByPatientId($patient->id),
+                    // $options1 . ' ' . $options6 . ' ' . $options3 . ' ' . $options4 . ' ' . $options5,
+                    $options1 . '  ' . $options5 ,
                         //  $options2
                 );
             }
@@ -1130,9 +1130,15 @@ class Patient extends MX_Controller {
                 $info[] = array(
                     $patient->id,
                     $patient->name,
+                    $patient->email,
                     $patient->phone,
+                    $patient->birthdate,
+                    $patient->sex,
                     $patient->address,
-                    $options1 . ' ' . $options6 . ' ' . $options3,
+                
+                    //$this->settings_model->getSettings()->currency . $this->patient_model->getDueBalanceByPatientId($patient->id),
+                    // $options1 . ' ' . $options6 . ' ' . $options3 . ' ' . $options4 . ' ' . $options5,
+                    $options1 . '  ' . $options5 ,
                         //  $options2
                 );
             }
@@ -1202,7 +1208,7 @@ class Patient extends MX_Controller {
                 $patient->id,
                 $patient->name,
                 $patient->phone,
-                $patient->address,
+                $patient->bloodgroup,
                 $due,
                 //  $options1 . ' ' . $options2 . ' ' . $options3 . ' ' . $options4 . ' ' . $options5,
                 $options4
